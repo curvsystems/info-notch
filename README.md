@@ -25,6 +25,13 @@ cd info-notch
 ```
 Stop it with `pkill infonotch`.
 
+## Start at login
+```sh
+./login.sh on    # installs a LaunchAgent, starts now and at every login
+./login.sh off   # removes it
+```
+While it's on, the app restarts if killed; use `./login.sh off` to stop it for good.
+
 ## Customise
 Edit the top of `main.swift`:
 - `sideWidth`: how far the bar extends past each side of the notch (default 90pt)
@@ -34,7 +41,7 @@ Edit the top of `main.swift`:
 
 ## Notes
 - Runs at window level `.statusBar`. It's designed to sit beneath other notch apps such as [Notchy](https://github.com/adamlyttleapps/notchy), which draw at the same level but on top; layering between apps at the same level is not guaranteed.
-- Not yet included: start-at-login, multiple displays.
+- Not yet included: multiple displays.
 
 ## License
 MIT
